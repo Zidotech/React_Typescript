@@ -1,4 +1,9 @@
 import './App.css'
+import { Box } from './components/context/Box'
+import { User } from './components/context/User'
+import { ThemeContextProvider } from './components/context/ThemeContext'
+import { UserContextProvider } from './components/context/UserContext'
+import { Zido } from './components/context/Zido'
 import { Button } from './components/props/Button'
 import { Container } from './components/props/Container'
 import { Greet } from './components/props/Greet'
@@ -9,7 +14,7 @@ import { Person } from './components/props/Person'
 import { PersonList } from './components/props/PersonList'
 import { Status } from './components/props/Status'
 import { LoggedIn } from './components/state/LoggedIn'
-import { User } from './components/state/User'
+// import { User } from './components/state/User'
 
 function App() {
    const personName = {
@@ -49,8 +54,15 @@ function App() {
      }} />
      <Input value='' handleChange={event => console.log(event)} />
       <Container styles={{ border: '1px solid black', padding: '1rem' }} /> */}
-      <LoggedIn />
-      <User />
+      {/* <LoggedIn />
+      <User /> */}
+      <ThemeContextProvider>
+        <Box />
+      </ThemeContextProvider>
+      {/* <Zido /> */}
+      <UserContextProvider>
+        <User/>
+      </UserContextProvider>
      </div>
     </>
   )
